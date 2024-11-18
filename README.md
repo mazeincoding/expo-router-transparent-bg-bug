@@ -1,50 +1,22 @@
-# Welcome to your Expo app 👋
+# Expo Router Stack Background Bug
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Minimal reproduction of a bug where Stack navigation shows a white background despite transparent settings.
 
-## Get started
+## The Issue
+When using expo-router's Stack navigation with a background image, the Stack shows a white background that cannot be made transparent, even when setting `contentStyle: { backgroundColor: "transparent" }`.
 
-1. Install dependencies
+## Steps to reproduce
 
-   ```bash
-   npm install
-   ```
+1. Clone this repository
+2. Run `npm install`
+3. Run `npm start`
+4. Observe the white background between the image and the content
 
-2. Start the app
+## Expected behavior
+The Stack should be transparent, allowing the background image to show through.
 
-   ```bash
-    npx expo start
-   ```
+## Actual behavior
+A white background appears between the background image and the Stack content.
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Notice
+I have not tested this on Android. The issue may only occur on iOS.
